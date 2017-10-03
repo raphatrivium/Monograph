@@ -1,5 +1,5 @@
-# Monography
-Scrips that i have used in my monography
+# Monograph
+Scrips that i have used in my monograph
 
 
 ==================================================================

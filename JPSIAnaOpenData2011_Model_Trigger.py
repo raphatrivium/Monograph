@@ -29,6 +29,7 @@ process.TFileService = cms.Service ('TFileService',
 process.demo = cms.EDAnalyzer('JpsiAnalyzerOpen2011',
 		#trigger_on = cms.bool(True),
         verbose = cms.bool(False),
+	triggerflag = cms.bool(False), # False = MC and True = Data		      
 	# Trigger
 	TriggerResultsTag = cms.untracked.InputTag("TriggerResults", "", "HLT"),
     TriggerEventTag = cms.untracked.InputTag("hltTriggerSummaryAOD", "", "HLT"),

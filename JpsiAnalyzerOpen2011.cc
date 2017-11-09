@@ -566,8 +566,8 @@ unsigned int pathIndex = triggerIndex(iEvent,HLTR,triggerName_);
    std::vector<reco::Muon> myLeptons;
 
 	Total_Events++;
-       if (triggerFired){
-                countInTriggered++;
+    //   if (triggerFired){
+      //          countInTriggered++;
   // Reco Muons
   for (reco::MuonCollection::const_iterator muon = recoMuons->begin(); muon != recoMuons->end(); muon++) {
                 CounterMuons++;               
@@ -734,7 +734,7 @@ unsigned int pathIndex = triggerIndex(iEvent,HLTR,triggerName_);
 			} //end numberOfValidTrackerHits         
     	}//end TMOneStationTight 
    } //Muon Loop
-  }// Trigger selection
+  //}// Trigger selection
 
 std::sort(myLeptons.begin(),myLeptons.end(), [](const reco::Muon &a, const reco::Muon &b){
     return a.pt() > b.pt();

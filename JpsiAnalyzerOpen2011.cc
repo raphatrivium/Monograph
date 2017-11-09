@@ -155,6 +155,7 @@ class JpsiAnalyzerOpen2011 : public edm::EDAnalyzer {
 	TH1F* histo_MllPhi;
 
     bool verbose_;
+    bool triggerflag_;	
     edm::InputTag primaryVertexProducer_;
     edm::InputTag recoMuons_;
 // Reco configs
@@ -282,6 +283,7 @@ class JpsiAnalyzerOpen2011 : public edm::EDAnalyzer {
 //
 JpsiAnalyzerOpen2011::JpsiAnalyzerOpen2011(const edm::ParameterSet& iConfig):
 verbose_ (iConfig.getParameter< bool > ("verbose")),
+triggerflag_ (iConfig.getParameter< bool > ("triggerflag")),
 primaryVertexProducer_ (iConfig.getParameter<edm::InputTag>("primaryVertexProducer")),
 recoMuons_(iConfig.getParameter<edm::InputTag>("recoMuonsLabel")),
 // Reco config with the trigger
@@ -567,7 +569,7 @@ unsigned int pathIndex = triggerIndex(iEvent,HLTR,triggerName_);
 
 	Total_Events++;
     //   if (triggerFired){
-      //          countInTriggered++;
+         if(triggerflag_) countInTriggered++;
   // Reco Muons
   for (reco::MuonCollection::const_iterator muon = recoMuons->begin(); muon != recoMuons->end(); muon++) {
                 CounterMuons++;               

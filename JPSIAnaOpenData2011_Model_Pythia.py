@@ -21,7 +21,8 @@ process.TFileService = cms.Service ('TFileService',
 
 process.demo = cms.EDAnalyzer('JpsiAnalyzerOpen2011',
         verbose = cms.bool(True),
-	# RECO Labels
+	triggerflag = cms.bool(False), # False = MC and True = Data		      
+        # RECO Labels
 		primaryVertexProducer = cms.InputTag("offlinePrimaryVertices"),
 	recoMuonsLabel = cms.InputTag("muons"),   
 	# RECO Configs
